@@ -34,5 +34,47 @@
   </div>
 
   <script>
-    (function () {
+    (function () <!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Probate Dashboard (Demo)</title>
+  <style>
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;margin:0;background:#f6f7fb}
+    .shell{display:flex;min-height:100vh}
+    .nav{width:240px;background:#121826;color:#e9eef7;padding:24px}
+    .nav h2{margin-top:0;font-size:18px}
+    .nav a{display:block;color:#e9eef7;text-decoration:none;margin:10px 0}
+    .main{flex:1;padding:32px}
+    .card{background:#fff;border-radius:16px;box-shadow:0 8px 24px rgba(0,0,0,.08);padding:20px;margin-bottom:16px}
+    .muted{color:#667}
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <aside class="nav">
+      <h2>Hamilton & Assoc.</h2>
+      <a href="#">Dashboard</a>
+      <a href="#">Matters</a>
+      <a href="#">Documents</a>
+      <a href="#">Calendar</a>
+      <a href="#">Beneficiaries</a>
+    </aside>
+    <main class="main">
+      <h1>Welcome to the Probate Dashboard</h1>
+      <div class="card">
+        <strong>Active Matters</strong>
+        <p class="muted">Estate of Jane Smith (VIC) — Drafting Affidavit<br>
+        Estate of Robert Brown (NSW) — Awaiting Grant</p>
+      </div>
+      <div class="card">
+        <strong>Next Deadlines</strong>
+        <p class="muted">Affidavit due 20 Sept • Filing due 25 Sept</p>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
+
       cons
