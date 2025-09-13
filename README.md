@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Hamilton & Associates – Login</title>
   <style>
-    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;margin:0;background:#f6f7fb}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;margin:0;background:#f6f7fb}
     .wrap{max-width:420px;margin:10vh auto;padding:32px;background:#fff;border-radius:16px;box-shadow:0 8px 24px rgba(0,0,0,.08)}
     h1{margin:0 0 8px}
     label{display:block;font-size:14px;margin:16px 0 6px;color:#334}
@@ -19,28 +19,20 @@
   <div class="wrap">
     <h1>Sign in</h1>
     <p class="hint">Demo creds: <code>demo@hamilton.com</code> / <code>probate123</code></p>
-    <label for="email">Email</label>
-    <input id="email" type="email" autocomplete="username" placeholder="you@hamilton.com" />
-    <label for="password">Password</label>
-    <input id="password" type="password" autocomplete="current-password" placeholder="••••••••" />
-    <button id="login">Log in</button>
-    <div id="err" class="error">Incorrect email or password.</div>
+
+    <!-- Use a FORM so Enter key works; prevent default submit in JS -->
+    <form id="login-form" novalidate>
+      <label for="email">Email</label>
+      <input id="email" type="email" autocomplete="username" placeholder="you@hamilton.com" required />
+
+      <label for="password">Password</label>
+      <input id="password" type="password" autocomplete="current-password" placeholder="••••••••" required />
+
+      <button type="submit" id="login">Log in</button>
+      <div id="err" class="error">Incorrect email or password.</div>
+    </form>
   </div>
+
   <script>
-    const OK_USER = "demo@hamilton.com";
-    const OK_PASS = "probate123";
-    const email = document.getElementById("email");
-    const pass = document.getElementById("password");
-    const err  = document.getElementById("err");
-    document.getElementById("login").addEventListener("click", () => {
-      const good = email.value.trim().toLowerCase() === OK_USER && pass.value === OK_PASS;
-      if (good) {
-        // For demo, redirect to your “dashboard” mock (another HTML page or Figma link)
-        window.location.href = "dashboard.html";
-      } else {
-        err.style.display = "block";
-      }
-    });
-  </script>
-</body>
-</html>
+    (function () {
+      cons
